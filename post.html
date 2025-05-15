@@ -11,6 +11,49 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.option{
+			display: flex; align-items: center; gap: 2px;
+			}
+
+			.option.wrong label {
+				color: #ED4337;
+			}
+
+			.option.correct label {
+				color: #00FF00;
+			}
+			.btn-group{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-top: 10px;
+				gap: 5px;
+				margin-bottom: 10px;
+			}
+
+			.question {
+				margin-bottom: 30px;
+			}
+			.input-boxes {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 5px;
+				margin-top: 10px;
+			}
+			.input-boxes input {
+				width: 40px;
+				height: 40px;
+				text-align: center;
+				font-size: 24px;
+				text-transform: uppercase;
+				color: black;
+			}
+			.result {
+				margin-top: 5px;
+				font-weight: bold;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -82,15 +125,67 @@
 									<header class="major">
 										<h2>I. Direction: Write Land Breeze <br> if the statement <br>refers to Land Breezes <br> and Sea Breeze if <br> the statement refers to Sea breezes .</h2>
 									</header>
-									<p>        1. The air from the land will move out to replace the rising warm air
-                   
-                   
-                    
-                     </p>
-									<p> 2. Wind blows high pressure towards low pressure </p>
-									<p> 3. A wind blows from the land to the ocean</p>
-									<p> 4. Cool high pressure or sinks over the land</p>
-                  <p>5. The air above the sea will move into replacing the rising warm air</p>
+									<p>  
+									    1. The air from the land will move out to replace the rising warm air
+										<div class="question" data-correct="a-1">
+											<div class="option">
+												<input type="radio" name="question-1" value="a-1" id="a-1">
+												<label for="a-1">Land Breeze</label>
+											</div>
+											<div class="option">
+												<input type="radio" name="question-1" value="b-1" id="b-1">
+												<label for="b-1">Sea Breeze </label>
+											</div>
+										</div>
+                   					</p>
+									<p> 2. Wind blows high pressure towards low pressure 
+										<div class="question" data-correct="b-2">
+											<div class="option">
+												<input type="radio" name="question-2" value="a-2" id="a-2">
+												<label for="a-2">Land Breeze</label>
+											</div>
+											<div class="option">
+												<input type="radio" name="question-2" value="b-2" id="b-2">
+												<label for="b-2">Sea Breeze </label>
+											</div>
+										</div>
+									</p>
+									<p> 3. A wind blows from the land to the ocean
+										<div class="question" data-correct="a-3">
+											<div class="option">
+												<input type="radio" name="question-3" value="a-3" id="a-3">
+												<label for="a-3">Land Breeze</label>
+											</div>
+											<div class="option">
+												<input type="radio" name="question-3" value="b-3" id="b-3">
+												<label for="b-3">Sea Breeze </label>
+											</div>
+										</div>
+									</p>
+									<p> 4. Cool high pressure or sinks over the land
+										<div class="question" data-correct="a-4">
+											<div class="option">
+												<input type="radio" name="question-4" value="a-4" id="a-4">
+												<label for="a-4">Land Breeze</label>
+											</div>
+											<div class="option">
+												<input type="radio" name="question-4" value="b-4" id="b-4">
+												<label for="b-4">Sea Breeze </label>
+											</div>
+										</div>
+									</p>
+                  					<p>5. The air above the sea will move into replacing the rising warm air
+										<div class="question" data-correct="b-100">
+											<div class="option">
+												<input type="radio" name="question-100" value="a-100" id="a-100">
+												<label for="a-100">Land Breeze</label>
+											</div>
+											<div class="option">
+												<input type="radio" name="question-100" value="b-100" id="b-100">
+												<label for="b-100">Sea Breeze </label>
+											</div>
+										</div>
+									</p>
 								</div>
 							</section>
 
@@ -106,14 +201,65 @@
 												<h3>II. Direction: Write  T if the statement is <br> True and write F if otherwise.</h3>
 											</header>
 											<p>6. Monsoons are wind system. Monsoons are called Amihan or Habagat depending on where the winds come from.
-                      
-                        
-                        
-                        </p>
-											<p>  7. The cold air that we experience from December to February are part of this wind system. It is locally known as Habagat.</p>
-											<p>8. The monsoon affect people in different ways. Farmers welcome monsoon, while Fish pen owners are worried about the monsoons.</p>
-											<p>9. The monsoon usually bring abundant rainfall to country and this is the reason why they have been mistaken for rains.</p>
-                      <p>10. The wind that moves from high pressure area in Australia to the low pressure area in the Asian continent is locally known as Amihan.</p>
+												<div class="question" data-correct="t-1">
+													<div class="option">
+														<input type="radio" name="question-5" value="t-1" id="t-1">
+														<label for="t-1">True</label>
+													</div>
+													<div class="option">
+														<input type="radio" name="question-5" value="f-1" id="f-1">
+														<label for="f-1">False</label>
+													</div>
+												</div>
+											</p>
+											<p>7. The cold air that we experience from December to February are part of this wind system. It is locally known as Habagat.
+												<div class="question" data-correct="f-2">
+													<div class="option">
+														<input type="radio" name="question-7" value="t-1" id="t-2">
+														<label for="t-2">True</label>
+													</div>
+													<div class="option">
+														<input type="radio" name="question-7" value="f-1" id="f-2">
+														<label for="f-2">False</label>
+													</div>
+												</div>
+											</p>
+											<p>8. The monsoon affect people in different ways. Farmers welcome monsoon, while Fish pen owners are worried about the monsoons.
+												<div class="question" data-correct="t-3">
+													<div class="option">
+														<input type="radio" name="question-8" value="t-3" id="t-3">
+														<label for="t-3">True</label>
+													</div>
+													<div class="option">
+														<input type="radio" name="question-8" value="f-3" id="f-3">
+														<label for="f-3">False</label>
+													</div>
+												</div>
+											</p>
+											<p>9. The monsoon usually bring abundant rainfall to country and this is the reason why they have been mistaken for rains.
+												<div class="question" data-correct="t-4">
+													<div class="option">
+														<input type="radio" name="question-9" value="t-4" id="t-4">
+														<label for="t-4">True</label>
+													</div>
+													<div class="option">
+														<input type="radio" name="question-9" value="f-4" id="f-4">
+														<label for="f-4">False</label>
+													</div>
+												</div>
+											</p>
+                      						<p>10. The wind that moves from high pressure area in Australia to the low pressure area in the Asian continent is locally known as Amihan.
+												<div class="question" data-correct="f-5">
+													<div class="option">
+														<input type="radio" name="question-10" value="t-5" id="t-5">
+														<label for="t-5">True</label>
+													</div>
+													<div class="option">
+														<input type="radio" name="question-10" value="f-5" id="f-5">
+														<label for="f-5">False</label>
+													</div>
+												</div>
+											</p>
 										</div>
 									</div>
 								</section>
@@ -126,10 +272,11 @@
 											<header class="major">
 												<h3>III. Direction: Fill in the blanks <br> with the missing letters <br> to complete the word described by the clues.</h3>
 											</header>
-											<p>11. A place where it is warmer than anywhere else
+											<div id="quiz-container"></div>
+											<!-- <p>11. A place where it is warmer than anywhere else
                         E_ _ a _ _ r
                         
-                        1
+                        ?
                         
                         </p>
 											<p>12. Kind of weather you expect at the intertropical convergence zone 
@@ -139,10 +286,15 @@
 											<p>14. Prediction of what weather will be in the future, it measure pressure, air and temperature 
                         _ ea _ _ er  fo _ _ ca _ _</p>
                         <p>15. A place where the winds in the tropics meet or converge 
-                          In _ _ _   tr _ pi _ al  co _ _ er _ _ nc _    _ on_</p>
+                          In _ _ _   tr _ pi _ al  co _ _ er _ _ nc _    _ on_</p> -->
 										</div>
 									</div>
 								</section>
+
+								<div class="btn-group">
+									<button onclick="checkAllAnswers()">Submit</button>
+									<button onclick="resetAll()">Reset</button>
+								</div>
 
 							</section>
 
@@ -232,6 +384,196 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+			 const questions_arr = [
+				{
+					number: 11,
+					clue: "A place where it is warmer than anywhere else",
+					pattern: "E__A__R",
+					answer: "EQUATOR"
+				},
+				{
+					number: 12,
+					clue: "Kind of weather you expect at the intertropical convergence zone",
+					pattern: "H__AND__Y",
+					answer: "HOTANDRAINY"
+				},
+				{
+					number: 13,
+					clue: "It happens when the rising warm air formed clouds",
+					pattern: "T__U__DE__TO__",
+					answer: "THUNDERSTORM"
+				},
+				{
+					number: 14,
+					clue: "Prediction of what weather will be in the future, it measures pressure, air and temperature",
+					pattern: "_EA__ER FO__CA__",
+					answer: "WEATHERFORECAST"
+				},
+				{
+					number: 15,
+					clue: "A place where the winds in the tropics meet or converge",
+					pattern: "IN___TR_P__ALCO__ER__NC_ZON__",
+					answer: "INTERTROPICALCONVERGENCEZONE"
+				}
+
+				];
+				var correctCount = 0;
+				const container = document.getElementById("quiz-container");
+
+				questions_arr.forEach((q, index) => {
+				const div = document.createElement("div");
+				div.className = "question";
+				div.innerHTML = `<p><strong>${q.number}.</strong> ${q.clue}<br><em>${q.pattern}</em></p>`;
+
+				const inputContainer = document.createElement("div");
+				inputContainer.className = "input-boxes";
+
+				for (let i = 0; i < q.answer.length; i++) {
+					const input = document.createElement("input");
+					input.maxLength = 1;
+					input.dataset.questionIndex = index;
+					input.dataset.charIndex = i;
+					input.dataset.inputId = `${index}-${i}`;
+
+					if (q.pattern[i] && q.pattern[i] !== "_" && q.pattern[i] !== " ") {
+						input.value = q.pattern[i].toUpperCase();
+						input.disabled = true;
+					} else if (q.pattern[i] === " ") {
+						input.disabled = true;
+						input.style.background = "transparent";
+						input.style.border = "none";
+					} else {
+					// Add auto-tab event
+					input.addEventListener("input", function () {
+						this.value = this.value.toUpperCase(); // 👈 Force uppercase
+
+						if (this.value.length === 1) {
+							const nextInput = document.querySelector(`input[data-input-id="${index}-${i + 1}"]`);
+							if (nextInput && !nextInput.disabled) {
+							nextInput.focus();
+							}
+						}
+					});
+
+					}
+
+					inputContainer.appendChild(input);
+				}
+
+				const result = document.createElement("div");
+				result.className = "result";
+				result.id = `result-${index}`;
+
+				div.appendChild(inputContainer);
+				div.appendChild(result);
+				container.appendChild(div);
+				});
+
+				function checkAllAnswersInput() {
+					questions_arr.forEach((q, index) => {
+						const inputs = document.querySelectorAll(`input[data-question-index="${index}"]`);
+						let userAnswer = "";
+						inputs.forEach(input => {
+						userAnswer += (input.value || "").toUpperCase();
+						});
+
+						const result = document.getElementById(`result-${index}`);
+						if (userAnswer === q.answer.toUpperCase()) {
+						result.textContent = "✅ Correct!";
+						result.style.color = "green";
+						correctCount ++;
+						} else {
+						result.textContent = "❌ Incorrect. Try again.";
+						result.style.color = "red";
+						}
+					});
+				}
+
+				function resetQuizWord() {
+					// Clear all inputs except disabled ones
+					const inputs = document.querySelectorAll("#quiz-container input");
+					inputs.forEach(input => {
+						if (!input.disabled) {
+						input.value = "";
+						}
+					});
+
+					// Clear all result messages
+					const results = document.querySelectorAll(".result");
+					results.forEach(result => {
+						result.textContent = "";
+					});
+
+					// Focus on the first available input
+					const firstInput = [...inputs].find(input => !input.disabled);
+					if (firstInput) {
+						firstInput.focus();
+					}
+				}
+
+					
+				function checkAllAnswers() {
+					const questions = document.querySelectorAll('.question');
+
+					questions.forEach(question => {
+						const correctId = question.getAttribute('data-correct');
+						const selected = question.querySelector('input[type="radio"]:checked');
+
+						// Reset previous state
+						question.querySelectorAll('.option').forEach(opt => {
+						opt.classList.remove('correct', 'wrong');
+						});
+
+						// Always show the correct answer in green
+						if (correctId) {
+							const correctOption = question.querySelector(`#${correctId}`);
+							if (correctOption) {
+								correctOption.parentElement.classList.add('correct');
+							}
+						}
+
+						// Count and mark answers
+						if (selected) {
+							if (selected.value == correctId) {
+								correctCount++;
+							} else {
+								selected.parentElement.classList.add('wrong');
+							}
+						}	
+					});
+					checkAllAnswersInput()
+					// Show result
+					alert(`You got ${correctCount} out of ${questions.length} correct!`);
+				}
+
+				function resetQuiz() {
+					const questions = document.querySelectorAll('.question');
+
+					questions.forEach(question => {
+						// Clear selected radio buttons
+						const inputs = question.querySelectorAll('input[type="radio"]');
+						inputs.forEach(input => input.checked = false);
+
+						// Remove visual feedback classes
+						question.querySelectorAll('.option').forEach(opt => {
+						opt.classList.remove('correct', 'wrong');
+						});
+					});
+
+					// Clear result display if using div
+					const resultEl = document.getElementById('result');
+					if (resultEl) resultEl.textContent = '';
+				}
+
+				function resetAll(){
+					resetQuizWord()
+					resetQuiz()
+				}
+
+
+
+			</script>
 
 	</body>
 </html>

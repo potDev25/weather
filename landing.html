@@ -12,6 +12,27 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
+	<style>
+		.option{
+			display: flex; align-items: center; gap: 2px;
+		}
+
+		.option.wrong label {
+			color: #ED4337;
+		}
+
+		.option.correct label {
+			color: #00FF00;
+		}
+		.btn-group{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-top: 10px;
+			gap: 5px;
+			margin-bottom: 10px;
+		}
+	</style>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -77,20 +98,33 @@
 					<div id="main">
 
 						<!-- One -->
-							<section id="one">
+							<section id="one" class="question" data-correct="b">
 								<div class="inner">
 									<header class="major">
-										<h2>1. What causes land and sea breezes?</h2>
+									  <h2>1. What causes land and sea breezes?</h2>
 									</header>
-									<p>a. The rotation of the Earth</p>
-									<p>b. The unequal heating of land and water</p>
-									<p>c. The gravitational pull of the Moon</p>
-									<p>d. The presence of mountains and valleys</p>
+								
+									<div class="option">
+									  <input type="radio" name="question-1" value="a" id="a">
+									  <label for="a">a. The rotation of the Earth</label>
+									</div>
+									<div class="option">
+									  <input type="radio" name="question-1" value="b" id="b">
+									  <label for="b">b. The unequal heating of land and water</label> <!-- correct -->
+									</div>
+									<div class="option">
+									  <input type="radio" name="question-1" value="c" id="c">
+									  <label for="c">c. The gravitational pull of the Moon</label>
+									</div>
+									<div class="option">
+									  <input type="radio" name="question-1" value="d" id="d">
+									  <label for="d">d. The presence of mountains and valleys</label>
+									</div>
 								</div>
 							</section>
 
 						<!-- Two -->
-							<section id="two" class="spotlights">
+							<section id="two" class="spotlights question" data-correct="b-2">
 								<section>
 									<a href="generic.html" class="image">
 										<img src="images/1.png" alt="" data-position="center center" />
@@ -100,14 +134,27 @@
 											<header class="major">
 												<h3>2. When does a sea breeze usually occur?</h3>
 											</header>
-											<p>a. During the night</p>
-											<p>b. During the day</p>
-											<p>c. During both day and night</p>
-											<p>d. Only during the winter season</p>
+
+											<div class="option">
+												<input type="radio" name="question-2" value="a-2" id="a-2">
+												<label for="a-2"><p>a. During the night</p></label>
+											  </div>
+											<div class="option">
+												<input type="radio" name="question-2" value="b-2" id="b-2">
+												<label for="b-2"><p>b. During the day</p></label> <!-- correct -->
+											</div>
+											<div class="option">
+												<input type="radio" name="question-2" value="c-2" id="c-2">
+												<label for="c-2"><p>c. During both day and night</p></label>
+											</div>
+											<div class="option">
+												<input type="radio" name="question-2" value="d-2" id="d-2">
+												<label for="d-2"><p>d. Only during the winter season</p></label>
+											</div>
 										</div>
 									</div>
 								</section>
-								<section>
+								<section class="question" data-correct="a-3">
 									<a href="generic.html" class="image">
 										<img src="images/1.webp" alt="" data-position="top center" />
 									</a>
@@ -116,14 +163,26 @@
 											<header class="major">
 												<h3>3. What happens during a land breeze?</h3>
 											</header>
-											<p>a. Warm air from the sea rises, and cool air from the land moves toward the sea</p>
-											<p>b. Warm air from the land rises, and cool air from the sea moves toward the land</p>
-											<p>c. The land and sea temperatures remain the same</p>
-											<p>d. The wind moves in a circular pattern between the land and the sea</p>
+											<div class="option">
+												<input type="radio" name="question-3" value="a-3" id="a-3">
+												<label for="a-3"><p>a. Warm air from the sea rises, and cool air from the land moves toward the sea</p></label>
+											  </div>
+											<div class="option">
+												<input type="radio" name="question-3" value="b-3" id="b-3">
+												<label for="b-3"><p>b. Warm air from the land rises, and cool air from the sea moves toward the land</p></label> <!-- correct -->
+											</div>
+											<div class="option">
+												<input type="radio" name="question-3" value="c-3" id="c-3">
+												<label for="c-3"><p>c. The land and sea temperatures remain the same</p></label>
+											</div>
+											<div class="option">
+												<input type="radio" name="question-3" value="d-3" id="d-3">
+												<label for="d-3"><p>d. The wind moves in a circular pattern between the land and the sea</p></label>
+											</div>
 										</div>
 									</div>
 								</section>
-								<section>
+								<section class="question" data-correct="b-4">
 									<a href="generic.html" class="image">
 										<img src="images/3.webp" alt="" data-position="25% 25%" />
 									</a>
@@ -132,25 +191,49 @@
 											<header class="major">
 												<h3>4. Which of the following best describes monsoons?</h3>
 											</header>
-											<p>a. Short-lived local winds</p>
-											<p>b. Seasonal winds that bring heavy rainfall or dry conditions</p>
-											<p>c. Winds that always blow from west to east</p>
-											<p>d. Sudden, strong gusts of wind</p>
+											<div class="option">
+												<input type="radio" name="question-4" value="a-4" id="a-4">
+												<label for="a-4"><p>a. Short-lived local winds</p></label>
+											  </div>
+											<div class="option">
+												<input type="radio" name="question-4" value="b-4" id="b-4">
+												<label for="b-4"><p>b. Seasonal winds that bring heavy rainfall or dry conditions</p></label> <!-- correct -->
+											</div>
+											<div class="option">
+												<input type="radio" name="question-4" value="c-4" id="c-4">
+												<label for="c-4"><p>c. Winds that always blow from west to east</p></label>
+											</div>
+											<div class="option">
+												<input type="radio" name="question-4" value="d-4" id="d-4">
+												<label for="d-4"><p>d. Sudden, strong gusts of wind</p></label>
+											</div>
 										</div>
 									</div>
 								</section>
 							</section>
 
 						<!-- Three -->
-							<section id="three">
+							<section id="three" class="question" data-correct="b-5">
 								<div class="inner">
 									<header class="major">
 										<h3>5. What is the main factor that causes monsoons?</h3>
 									</header>
-									<p>a. Ocean currents</p>
-									<p>b. The difference in air pressure between land and ocean</p>
-									<p>c. Earth’s tilt and rotation</p>
-									<p>d. The presence of mountains</p>
+									<div class="option">
+										<input type="radio" name="question-5" value="a-5" id="a-5">
+										<label for="a-5"><p>a. Ocean currents</p></label>
+									  </div>
+									<div class="option">
+										<input type="radio" name="question-5" value="b-5" id="b-5">
+										<label for="b-5"><p>b. The difference in air pressure between land and ocean</p></label> <!-- correct -->
+									</div>
+									<div class="option">
+										<input type="radio" name="question-5" value="c-5" id="c-5">
+										<label for="c-5"><p>c. Earth’s tilt and rotation</p></label>
+									</div>
+									<div class="option">
+										<input type="radio" name="question-5" value="d-5" id="d-5">
+										<label for="d-5"><p>d. The presence of mountains</p></label>
+									</div>
 								</div>
 							</section>
 
@@ -159,7 +242,7 @@
 					<div id="main">
 
 						<!-- Two -->
-							<section id="two" class="spotlights">
+							<section id="two" class="spotlights question" data-correct="b-6">
 								<section>
 									<a href="generic.html" class="image">
 										<img src="images/4.webp" alt="" data-position="center center" />
@@ -169,14 +252,27 @@
 											<header class="major">
 												<h3>6. In the Philippines, which <br>monsoon brings heavy rain from June to October?</h3>
 											</header>
-											<p>a. Northeast Monsoon (Amihan)</p>
-											<p>b. Southwest Monsoon (Habagat)</p>
-											<p>c. Trade Winds</p>
-											<p>d. Easterlies</p>
+											<div class="option">
+												<input type="radio" name="question-6" value="a-6" id="a-6">
+												<label for="a-6"><p>a. Northeast Monsoon (Amihan)</p></label>
+											  </div>
+											<div class="option">
+												<input type="radio" name="question-6" value="b-6" id="b-6">
+												<label for="b-6"><p>b. Southwest Monsoon (Habagat)</p></label> <!-- correct -->
+											</div>
+											<div class="option">
+												<input type="radio" name="question-6" value="c-6" id="c-6">
+												<label for="c-6"><p>c. Trade Winds</p></label>
+											</div>
+											<div class="option">
+												<input type="radio" name="question-6" value="d-6" id="d-6">
+												<label for="d-6"><p>d. Easterlies</p></label>
+											</div>
+											
 										</div>
 									</div>
 								</section>
-								<section>
+								<section class="question" data-correct="b-7">
 									<a href="generic.html" class="image">
 										<img src="images/6.webp" alt="" data-position="top center" />
 									</a>
@@ -185,14 +281,26 @@
 											<header class="major">
 												<h3>7. What is the Intertropical Convergence Zone (ITCZ)?</h3>
 											</header>
-											<p>a. A region where cold air masses meet warm air masses</p>
-											<p>b. A boundary where the trade winds from both hemispheres meet</p>
-											<p>c. A high-pressure area in the tropics</p>
-											<p>d. A zone where monsoons do not occur</p>
+											<div class="option">
+												<input type="radio" name="question-7" value="a-7" id="a-7">
+												<label for="a-7"><p>a. A region where cold air masses meet warm air masses</p></label>
+											  </div>
+											<div class="option">
+												<input type="radio" name="question-7" value="b-7" id="b-7">
+												<label for="b-7"><p>b. A boundary where the trade winds from both hemispheres meet</p></label> <!-- correct -->
+											</div>
+											<div class="option">
+												<input type="radio" name="question-7" value="c-7" id="c-7">
+												<label for="c-7"><p>c. A high-pressure area in the tropics</p></label>
+											</div>
+											<div class="option">
+												<input type="radio" name="question-7" value="d-7" id="d-7">
+												<label for="d-7"><p>d. A zone where monsoons do not occur</p></label>
+											</div>
 										</div>
 									</div>
 								</section>
-								<section>
+								<section class="question" data-correct="b-8">
 									<a href="generic.html" class="image">
 										<img src="images/sea_breeze.png" alt="" data-position="25% 25%" />
 									</a>
@@ -201,25 +309,49 @@
 											<header class="major">
 												<h3>8. What is the effect of the ITCZ in the Philippines?</h3>
 											</header>
-											<p>a. It causes dry and cool weather all year round</p>
-											<p>b. It brings heavy rainfall and thunderstorms</p>
-											<p>c. It prevents monsoons from occurring</p>
-											<p>d. It creates a permanent high-pressure system over the country</p>
+											<div class="option">
+												<input type="radio" name="question-8" value="a-8" id="a-8">
+												<label for="a-8"><p>a. It causes dry and cool weather all year round</p></label>
+											  </div>
+											<div class="option">
+												<input type="radio" name="question-8" value="b-8" id="b-8">
+												<label for="b-8"><p>b. It brings heavy rainfall and thunderstorms</p></label> <!-- correct -->
+											</div>
+											<div class="option">
+												<input type="radio" name="question-8" value="c-8" id="c-8">
+												<label for="c-8"><p>c. It prevents monsoons from occurring</p></label>
+											</div>
+											<div class="option">
+												<input type="radio" name="question-8" value="d-8" id="d-8">
+												<label for="d-8"><p>d. It creates a permanent high-pressure system over the country</p></label>
+											</div>
 										</div>
 									</div>
 								</section>
 							</section>
 
 						<!-- Three -->
-							<section id="three">
+							<section id="three" class="question" data-correct="a-9">
 								<div class="inner">
 									<header class="major">
 										<h3>9. During the day, why does air move from the sea to the land?</h3>
 									</header>
-									<p>a. The land heats up faster, causing warm air to rise and cool air from the sea to move in</p>
-									<p>b. The sea is warmer than the land, pushing air toward the land</p>
-									<p>c. The land absorbs more heat than the sea, making the wind move toward the sea</p>
-									<p>d. The wind is affected by Earth’s magnetic field</p>
+									<div class="option">
+										<input type="radio" name="question-9" value="a-9" id="a-9">
+										<label for="a-9"><p>a. The land heats up faster, causing warm air to rise and cool air from the sea to move in</p></label>
+									  </div>
+									<div class="option">
+										<input type="radio" name="question-9" value="b-9" id="b-9">
+										<label for="b-9"><p>b. The sea is warmer than the land, pushing air toward the land</p></label> <!-- correct -->
+									</div>
+									<div class="option">
+										<input type="radio" name="question-9" value="c-9" id="c-9">
+										<label for="c-9"><p>c. The land absorbs more heat than the sea, making the wind move toward the sea</p></label>
+									</div>
+									<div class="option">
+										<input type="radio" name="question-9" value="d-9" id="d-9">
+										<label for="d-9"><p>d. The wind is affected by Earth’s magnetic field</p></label>
+									</div>
 								</div>
 							</section>
 
@@ -229,7 +361,7 @@
 					<div id="main">
 
 						<!-- Two -->
-						<section id="two" class="spotlights">
+						<section id="two" class="spotlights question" data-correct="b-10">
 							<section>
 								<a href="generic.html" class="image">
 									<img src="images/23.gif" alt="" data-position="center center" />
@@ -239,14 +371,26 @@
 										<header class="major">
 											<h3>10. Why do monsoons have a significant <br>impact on agriculture in tropical regions?</h3>
 										</header>
-										<p>a. They bring strong winds that help pollinate crops</p>
-										<p>b. They provide seasonal rainfall that is essential for farming</p>
-										<p>c. They prevent droughts and typhoons from occurring</p>
-										<p>d. They create stable weather conditions throughout the year</p>
+										<div class="option">
+											<input type="radio" name="question-10" value="a-10" id="a-10">
+											<label for="a-10"><p>a. They bring strong winds that help pollinate crops</p></label>
+										  </div>
+										<div class="option">
+											<input type="radio" name="question-10" value="b-10" id="b-10">
+											<label for="b-10"><p>b. They provide seasonal rainfall that is essential for farming</p></label> <!-- correct -->
+										</div>
+										<div class="option">
+											<input type="radio" name="question-10" value="c-10" id="c-10">
+											<label for="c-10"><p>c. They prevent droughts and typhoons from occurring</p></label>
+										</div>
+										<div class="option">
+											<input type="radio" name="question-10" value="d-10" id="d-10">
+											<label for="d-10"><p>d. They create stable weather conditions throughout the year</p></label>
+										</div>
 									</div>
 								</div>
 							</section>
-							<section>
+							<section class="question" data-correct="b-11">
 								<a href="generic.html" class="image">
 									<img src="images/24.jpeg" alt="" data-position="top center" />
 								</a>
@@ -255,14 +399,26 @@
 										<header class="major">
 											<h3>11. What causes the seasonal shift of the ITCZ?</h3>
 										</header>
-										<p>a. The Earth’s rotation</p>
-										<p>b. The movement of the Sun between the Tropic of Cancer and Tropic of Capricorn</p>
-										<p>c. The gravitational pull of the Moon</p>
-										<p>d. The presence of large mountain ranges</p>
+										<div class="option">
+											<input type="radio" name="question-11" value="a-11" id="a-11">
+											<label for="a-11"><p>a. The Earth’s rotation</p></label>
+										  </div>
+										<div class="option">
+											<input type="radio" name="question-11" value="b-11" id="b-11">
+											<label for="b-11"><p>b. The movement of the Sun between the Tropic of Cancer and Tropic of Capricorn</p></label> <!-- correct -->
+										</div>
+										<div class="option">
+											<input type="radio" name="question-11" value="c-11" id="c-11">
+											<label for="c-11"><p>c. The gravitational pull of the Moon</p></label>
+										</div>
+										<div class="option">
+											<input type="radio" name="question-11" value="d-11" id="d-11">
+											<label for="d-11"><p>d. The presence of large mountain ranges</p></label>
+										</div>
 									</div>
 								</div>
 							</section>
-							<section>
+							<section class="question" data-correct="a-12">
 								<a href="generic.html" class="image">
 									<img src="images/26.jpg" alt="" data-position="25% 25%" />
 								</a>
@@ -271,25 +427,49 @@
 										<header class="major">
 											<h3>12. How does the Northeast Monsoon (Amihan) <br>affect the weather in the Philippines?</h3>
 										</header>
-										<p>a. It brings dry and cool winds from November to April</p>
-										<p>b. It causes continuous heavy rainfall from June to October</p>
-										<p>c. It creates typhoons during summer months</p>
-										<p>d. It increases temperatures in coastal areas</p>
+										<div class="option">
+											<input type="radio" name="question-12" value="a-12" id="a-12">
+											<label for="a-12"><p>a. It brings dry and cool winds from November to April</p></label>
+										  </div>
+										<div class="option">
+											<input type="radio" name="question-12" value="b-12" id="b-12">
+											<label for="b-12"><p>b. It causes continuous heavy rainfall from June to October</p></label> <!-- correct -->
+										</div>
+										<div class="option">
+											<input type="radio" name="question-12" value="c-12" id="c-12">
+											<label for="c-12"><p>c. It creates typhoons during summer months</p></label>
+										</div>
+										<div class="option">
+											<input type="radio" name="question-12" value="d-12" id="d-12">
+											<label for="d-12"><p>d. It increases temperatures in coastal areas</p></label>
+										</div>
 									</div>
 								</div>
 							</section>
 						</section>
 						
 						<!-- Three -->
-						<section id="three">
+						<section id="three" class="question" data-correct="b-13">
 							<div class="inner">
 								<header class="major">
 									<h3>13. Why do sea and land breezes occur more <br>frequently in coastal areas?</h3>
 								</header>
-								<p>a. Coastal areas have more trees that affect wind movement</p>
-								<p>b. The difference in heating and cooling rates between land and water is greater near coastlines</p>
-								<p>c. The ocean currents force the wind to change directions</p>
-								<p>d. The rotation of the Earth prevents winds from forming in inland areas</p>
+								<div class="option">
+									<input type="radio" name="question-13" value="a-13" id="a-13">
+									<label for="a-13"><p>a. Coastal areas have more trees that affect wind movement</p></label>
+								  </div>
+								<div class="option">
+									<input type="radio" name="question-13" value="b-13" id="b-13">
+									<label for="b-13"><p>b. The difference in heating and cooling rates between land and water is greater near coastlines</p></label> <!-- correct -->
+								</div>
+								<div class="option">
+									<input type="radio" name="question-13" value="c-13" id="c-13">
+									<label for="c-13"><p>c. The ocean currents force the wind to change directions</p></label>
+								</div>
+								<div class="option">
+									<input type="radio" name="question-13" value="d-13" id="d-13">
+									<label for="d-13"><p>d. The rotation of the Earth prevents winds from forming in inland areas</p></label>
+								</div>
 							</div>
 						</section>						
 
@@ -299,7 +479,7 @@
 					<div id="main">
 
 						<!-- Two -->
-						<section id="two" class="spotlights">
+						<section id="two" class="spotlights question" data-correct="b-14">
 							<section>
 								<a href="generic.html" class="image">
 									<img src="images/26.webp" alt="" data-position="center center" />
@@ -309,14 +489,26 @@
 										<header class="major">
 											<h3>14. What is the primary role of <br> trade winds in the formation of the ITCZ?</h3>
 										</header>
-										<p>a. They create low-pressure areas at the poles</p>
-										<p>b. They converge at the equator, causing warm air to rise and form clouds</p>
-										<p>c. They move parallel to the equator, preventing rain from forming</p>
-										<p>d. They only affect the northern hemisphere, causing storms</p>
+										<div class="option">
+											<input type="radio" name="question-14" value="a-14" id="a-14">
+											<label for="a-14"><p>a. They create low-pressure areas at the poles</p></label>
+										  </div>
+										<div class="option">
+											<input type="radio" name="question-14" value="b-14" id="b-14">
+											<label for="b-14"><p>b. They converge at the equator, causing warm air to rise and form clouds</p></label> <!-- correct -->
+										</div>
+										<div class="option">
+											<input type="radio" name="question-14" value="c-14" id="c-14">
+											<label for="c-14"><p>c. They move parallel to the equator, preventing rain from forming</p></label>
+										</div>
+										<div class="option">
+											<input type="radio" name="question-14" value="d-14" id="d-14">
+											<label for="d-14"><p>d. They only affect the northern hemisphere, causing storms</p></label>
+										</div>
 									</div>
 								</div>
 							</section>
-							<section>
+							<section class="question" data-correct="b-15">
 								<a href="generic.html" class="image">
 									<img src="images/1.png" alt="" data-position="top center" />
 								</a>
@@ -325,13 +517,29 @@
 										<header class="major">
 											<h3>15. What happens when the ITCZ stays <br>in one location for an extended period?</h3>
 										</header>
-										<p>a. The area experiences prolonged dry weather</p>
-										<p>b. The region may experience continuous heavy rainfall and flooding</p>
-										<p>c. The ITCZ prevents the formation of storms</p>
-										<p>d. The temperature in the region drops significantly</p>
+										<div class="option">
+											<input type="radio" name="question-15" value="a-15" id="a-15">
+											<label for="a-15"><p>a. The area experiences prolonged dry weather</p></label>
+										  </div>
+										<div class="option">
+											<input type="radio" name="question-15" value="b-15" id="b-15">
+											<label for="b-15"><p>b. The region may experience continuous heavy rainfall and flooding</p></label> <!-- correct -->
+										</div>
+										<div class="option">
+											<input type="radio" name="question-15" value="c-15" id="c-15">
+											<label for="c-15"><p>c. The ITCZ prevents the formation of storms</p></label>
+										</div>
+										<div class="option">
+											<input type="radio" name="question-15" value="d-15" id="d-15">
+											<label for="d-15"><p>d. The temperature in the region drops significantly</p></label>
+										</div>
 									</div>
 								</div>
 							</section>
+							<div class="btn-group">
+								<button onclick="checkAllAnswers()">Submit</button>
+								<button onclick="resetQuiz()">Reset</button>
+							</div>
 						</section>
 					</div>
 
@@ -414,6 +622,63 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				function checkAllAnswers() {
+					const questions = document.querySelectorAll('.question');
+					let correctCount = 0;
 
+					questions.forEach(question => {
+						const correctId = question.getAttribute('data-correct');
+						const selected = question.querySelector('input[type="radio"]:checked');
+
+						// Reset previous state
+						question.querySelectorAll('.option').forEach(opt => {
+						opt.classList.remove('correct', 'wrong');
+						});
+
+						// Always show the correct answer in green
+						if (correctId) {
+							const correctOption = question.querySelector(`#${correctId}`);
+							if (correctOption) {
+								correctOption.parentElement.classList.add('correct');
+							}
+						}
+
+						// Count and mark answers
+						if (selected) {
+							if (selected.value == correctId) {
+								correctCount++;
+							} else {
+								selected.parentElement.classList.add('wrong');
+							}
+						}	
+					});
+
+					// Show result
+					alert(`You got ${correctCount} out of ${questions.length} correct!`);
+				}
+
+				function resetQuiz() {
+					const questions = document.querySelectorAll('.question');
+
+					questions.forEach(question => {
+						// Clear selected radio buttons
+						const inputs = question.querySelectorAll('input[type="radio"]');
+						inputs.forEach(input => input.checked = false);
+
+						// Remove visual feedback classes
+						question.querySelectorAll('.option').forEach(opt => {
+						opt.classList.remove('correct', 'wrong');
+						});
+					});
+
+					// Clear result display if using div
+					const resultEl = document.getElementById('result');
+					if (resultEl) resultEl.textContent = '';
+				}
+
+
+
+			</script>
 	</body>
 </html>
