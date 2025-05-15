@@ -53,9 +53,56 @@
 				margin-top: 5px;
 				font-weight: bold;
 			}
+
+			.dialog-overlay {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.5);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				z-index: 999;
+				color: black;
+			}
+
+			.dialog-box {
+				background: #fff;
+				padding: 2rem;
+				border-radius: 8px;
+				color: black;
+				width: 300px;
+				max-width: 90%;
+				text-align: center;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+			}
+
+			#btn{
+				background-color: #007bff; /* Bootstrap's blue */
+				color: white;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+				font-weight: bold;
+				transition: background-color 0.3s ease;
+			}
+
+			#btn:hover{
+				background-color: #0056b3;
+			}
+
 		</style>
 	</head>
 	<body class="is-preload">
+		<div id="resultDialog" class="dialog-overlay" style="display: none;">
+			<div class="dialog-box">
+				<h2 style="color: black">Post Test Result</h2>
+				<p id="resultMessage"></p>
+				<button id="btn" onclick="closeDialog()">OK</button>
+			</div>
+		</div>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -395,26 +442,26 @@
 				{
 					number: 12,
 					clue: "Kind of weather you expect at the intertropical convergence zone",
-					pattern: "H__AND__Y",
-					answer: "HOTANDRAINY"
+					pattern: "H__ AND __Y",
+					answer: "HOT AND DRY"
 				},
 				{
 					number: 13,
 					clue: "It happens when the rising warm air formed clouds",
-					pattern: "T__U__DE__TO__",
+					pattern: "T_U_DE__TO__",
 					answer: "THUNDERSTORM"
 				},
 				{
 					number: 14,
 					clue: "Prediction of what weather will be in the future, it measures pressure, air and temperature",
 					pattern: "_EA__ER FO__CA__",
-					answer: "WEATHERFORECAST"
+					answer: "WEATHER FORECAST"
 				},
 				{
 					number: 15,
 					clue: "A place where the winds in the tropics meet or converge",
-					pattern: "IN___TR_P__ALCO__ER__NC_ZON__",
-					answer: "INTERTROPICALCONVERGENCEZONE"
+					pattern: "IN___ TR_PI_AL CO__ERG_NC_ _ON_",
+					answer: "INTER TROPICAL CONVERGENCE ZONE"
 				}
 
 				];
@@ -424,7 +471,7 @@
 				questions_arr.forEach((q, index) => {
 				const div = document.createElement("div");
 				div.className = "question";
-				div.innerHTML = `<p><strong>${q.number}.</strong> ${q.clue}<br><em>${q.pattern}</em></p>`;
+				div.innerHTML = `<p><strong>${q.number}.</strong> ${q.clue}</p>`;
 
 				const inputContainer = document.createElement("div");
 				inputContainer.className = "input-boxes";
@@ -471,24 +518,39 @@
 				});
 
 				function checkAllAnswersInput() {
+					let correctCountInput = 0;
+
 					questions_arr.forEach((q, index) => {
 						const inputs = document.querySelectorAll(`input[data-question-index="${index}"]`);
 						let userAnswer = "";
+
 						inputs.forEach(input => {
-						userAnswer += (input.value || "").toUpperCase();
+						if (!input.disabled && input.type === "text") {
+							userAnswer += (input.value || "").toUpperCase();
+						} else if (input.disabled && input.value && input.style.background !== "transparent") {
+							// Include pre-filled letter inputs in userAnswer
+							userAnswer += input.value.toUpperCase();
+						}
 						});
 
+						// Remove spaces from both userAnswer and correct answer for comparison
+						const cleanUserAnswer = userAnswer.replace(/\s+/g, '');
+						const cleanCorrectAnswer = q.answer.toUpperCase().replace(/\s+/g, '');
+
 						const result = document.getElementById(`result-${index}`);
-						if (userAnswer === q.answer.toUpperCase()) {
+						if (cleanUserAnswer === cleanCorrectAnswer) {
 						result.textContent = "✅ Correct!";
 						result.style.color = "green";
-						correctCount ++;
+						correctCountInput++;
 						} else {
 						result.textContent = "❌ Incorrect. Try again.";
 						result.style.color = "red";
 						}
 					});
+
+					return correctCountInput;
 				}
+
 
 				function resetQuizWord() {
 					// Clear all inputs except disabled ones
@@ -515,7 +577,7 @@
 					
 				function checkAllAnswers() {
 					const questions = document.querySelectorAll('.question');
-
+					let correctCount = 0;
 					questions.forEach(question => {
 						const correctId = question.getAttribute('data-correct');
 						const selected = question.querySelector('input[type="radio"]:checked');
@@ -526,25 +588,30 @@
 						});
 
 						// Always show the correct answer in green
-						if (correctId) {
-							const correctOption = question.querySelector(`#${correctId}`);
-							if (correctOption) {
-								correctOption.parentElement.classList.add('correct');
+						if(selected){
+							if (correctId) {
+								const correctOption = question.querySelector(`#${correctId}`);
+								if (correctOption) {
+									correctOption.parentElement.classList.add('correct');
+								}
 							}
+	
+							// Count and mark answers
+							if (selected) {
+								if (selected.value == correctId) {
+									correctCount++;
+								} else {
+									selected.parentElement.classList.add('wrong');
+								}
+							}	
 						}
-
-						// Count and mark answers
-						if (selected) {
-							if (selected.value == correctId) {
-								correctCount++;
-							} else {
-								selected.parentElement.classList.add('wrong');
-							}
-						}	
 					});
-					checkAllAnswersInput()
-					// Show result
-					alert(`You got ${correctCount} out of ${questions.length} correct!`);
+					const correctCountInput = checkAllAnswersInput();
+					const totalCorrect = correctCount + correctCountInput;
+					const totalQuestions = questions.length; // MCQ questions only
+					const totalInputs = questions_arr.length; // Input-type questions
+					document.getElementById("resultMessage").textContent = `You got ${totalCorrect} out of ${totalQuestions} correct!`;
+  					document.getElementById("resultDialog").style.display = "flex";
 				}
 
 				function resetQuiz() {
@@ -571,7 +638,9 @@
 					resetQuiz()
 				}
 
-
+				function closeDialog() {
+					document.getElementById("resultDialog").style.display = "none";
+				}
 
 			</script>
 

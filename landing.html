@@ -32,9 +32,54 @@
 			gap: 5px;
 			margin-bottom: 10px;
 		}
+
+		.dialog-overlay {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.5);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				z-index: 999;
+				color: black;
+			}
+
+			.dialog-box {
+				background: #fff;
+				padding: 2rem;
+				border-radius: 8px;
+				color: black;
+				width: 300px;
+				max-width: 90%;
+				text-align: center;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+			}
+
+			#btn{
+				background-color: #007bff; /* Bootstrap's blue */
+				color: white;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+				font-weight: bold;
+				transition: background-color 0.3s ease;
+			}
+
+			#btn:hover{
+				background-color: #0056b3;
+			}
 	</style>
 	<body class="is-preload">
-
+		<div id="resultDialog" class="dialog-overlay" style="display: none;">
+			<div class="dialog-box">
+				<h2 style="color: black">Post Test Result</h2>
+				<p id="resultMessage"></p>
+				<button id="btn" onclick="closeDialog()">OK</button>
+			</div>
+		</div>
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -637,25 +682,29 @@
 						});
 
 						// Always show the correct answer in green
-						if (correctId) {
-							const correctOption = question.querySelector(`#${correctId}`);
-							if (correctOption) {
-								correctOption.parentElement.classList.add('correct');
+						if(selected){
+							if (correctId) {
+								const correctOption = question.querySelector(`#${correctId}`);
+								if (correctOption) {
+									correctOption.parentElement.classList.add('correct');
+								}
 							}
+	
+							// Count and mark answers
+							if (selected) {
+								if (selected.value == correctId) {
+									correctCount++;
+								} else {
+									selected.parentElement.classList.add('wrong');
+								}
+							}	
 						}
-
-						// Count and mark answers
-						if (selected) {
-							if (selected.value == correctId) {
-								correctCount++;
-							} else {
-								selected.parentElement.classList.add('wrong');
-							}
-						}	
 					});
 
 					// Show result
-					alert(`You got ${correctCount} out of ${questions.length} correct!`);
+					// alert(`You got ${correctCount} out of ${questions.length} correct!`);
+					document.getElementById("resultMessage").textContent = `You got ${correctCount} out of ${questions.length} correct!`;
+  					document.getElementById("resultDialog").style.display = "flex";
 				}
 
 				function resetQuiz() {
@@ -677,7 +726,9 @@
 					if (resultEl) resultEl.textContent = '';
 				}
 
-
+				function closeDialog() {
+					document.getElementById("resultDialog").style.display = "none";
+				}
 
 			</script>
 	</body>
