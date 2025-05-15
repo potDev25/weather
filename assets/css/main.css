@@ -3380,7 +3380,7 @@ input, select, textarea {
 		-webkit-align-items: center;
 		-ms-align-items: center;
 		align-items: center;
-		background-image: url("../../images/istockphoto-1430945266-640x640.jpg");
+		/* background-image: url("../../images/istockphoto-1430945266-640x640.jpg"); */
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
